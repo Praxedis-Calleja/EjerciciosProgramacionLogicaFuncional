@@ -1,4 +1,13 @@
+total_redes = 0
+total_BD = 0
+total_DesarrolloSoftware = 0
+total_ProgramacionHardware = 0
+total_Modelado3D = 0
+total_GestionProyectosSoftware = 0
+
 def main():
+    global total_redes, total_BD, total_DesarrolloSoftware, total_ProgramacionHardware, total_Modelado3D, total_GestionProyectosSoftware
+    
     print("Bienvenido al cuestionario de intereses en sistemas computacionales.")
     print("Por favor, responde las siguientes preguntas con 'sí' o 'no'.")
 
@@ -12,13 +21,6 @@ def main():
     ]
 
     respuestas = []
-
-    total_redes = 0
-    total_BD = 0
-    total_DesarrolloSoftware = 0
-    total_ProgramacionHardware = 0
-    total_Modelado3D = 0
-    total_GestionProyectosSoftware = 0
 
     for pregunta in preguntas:
         respuesta = input(pregunta + " ")
@@ -37,11 +39,21 @@ def main():
             total_Modelado3D += 1
         elif i == 5 and respuesta == 'si':
             total_GestionProyectosSoftware += 1
-            
-                
+               
             
 
-       
+    continuar = input("¿Desea otro estudiante realizar el cuestionario? (sí/no): ").lower()
+    if continuar == 'si':
+        main()
+    else:
+        print("\nResumen de intereses de todos los estudiantes:")
+        print(f"Intereses en Redes: {total_redes}")
+        print(f"Intereses en Bases de Datos: {total_BD}")
+        print(f"Intereses en Desarrollo de Software: {total_DesarrolloSoftware}")
+        print(f"Intereses en Programación Hardware: {total_ProgramacionHardware}")
+        print(f"Intereses en Modelado 3D: {total_Modelado3D}")
+        print(f"Intereses en Gestión de Proyectos de Software: {total_GestionProyectosSoftware}")
+        return
     
 
     
@@ -52,22 +64,12 @@ def main():
         "Programación Hardware": respuestas[3] == 'si',
         "Modelado 3D": respuestas[4] == 'si',
         "Gestión de Proyectos de Software": respuestas[5] == 'si'
+        
     }
 
-    print("\nTus intereses en sistemas computacionales son:")
-    for area, interesado in intereses.items():
-        if interesado:
-            if area == "Redes":
-                print(f"- {area} (Total: {total_redes})")
-            elif area == "Bases de Datos":
-                print(f"- {area} (Total: {total_BD})")
-            elif area == "Desarrollo de Software":
-                print(f"- {area} (Total: {total_DesarrolloSoftware})")
-            elif area == "Programación Hardware":
-                print(f"- {area} (Total: {total_ProgramacionHardware})")
-            elif area == "Modelado 3D":
-                print(f"- {area} (Total: {total_Modelado3D})")
-            elif area == "Gestión de Proyectos de Software":
-                print(f"- {area} (Total: {total_GestionProyectosSoftware})")
+           
+    
+          
 
+           
 main()
