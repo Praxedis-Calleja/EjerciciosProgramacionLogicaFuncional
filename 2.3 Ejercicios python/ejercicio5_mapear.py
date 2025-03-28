@@ -1,5 +1,5 @@
 jugadores = [
-    { "nombre": "Ronado", "edad": 14},
+    { "nombre": "Ronaldo", "edad": 14},
     { "nombre": "Messi", "edad": 13},
     { "nombre": "Neymar", "edad": 12},
 ]

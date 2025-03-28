@@ -115,6 +115,5 @@ calificacion_peliculas = list(map(lambda pelicula: {"titulo": pelicula["Titulo"]
 
 print(calificacion_peliculas)
 
-
 import json
 print(json.dumps(calificacion_peliculas, indent=2))
